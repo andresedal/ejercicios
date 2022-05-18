@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RISK</title>
+        <script>
+             window.addEventListener('load', function(){
+                let dado1 = document.getElementById("dado1")
+                let dado2 = document.getElementById("dado2")
+                let ataque = document.getElementById("ataque")
+                let defensa = document.getElementById("defensa")
+                let atac = document.getElementById("atac")
+                let def = document.getElementById("def")
+
+                dado1.addEventListener('click', function(){
+                    for(i=0;i < atac.value;i++){
+                    let nuevoli1 = document.createElement('li')
+                    nuevoli1.innerHTML =  parseInt(Math.random() * (7 - 1) + 1)
+                    ataque.appendChild(nuevoli1)
+                    }
+                })
+
+                dado2.addEventListener('click', function(){
+                    
+                    let nuevoli2 = document.createElement('li')
+                    nuevoli2.innerHTML =  parseInt(Math.random() * (7 - 1) + 1)
+                    defensa.appendChild(nuevoli2) 
+                    
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div style="margin:auto;width:1000;">
+            <h1 align="center">RISK</h1>
+            <h2 align="center">Domina El Mundo</h2>
+            ATACANTE <input type="number" id="atac">
+            </br>
+            </br>            
+            DEFENSOR <input type="number" id="def">
+            </br>
+            </br>
+            <input type="button" id="dado1" value="dado atac"> <input type="button" id="dado2" value="dado def">
+            </br>
+            </br>
+            <ul id="ataque">
+                <h3>Ataque</h3>
+            </ul>
+            <ul id="defensa">
+                <h3>Defensa</h3>
+            </ul>
+        </div>
+    </body>
+</html>

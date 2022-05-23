@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora</title>
+        <script>
+            window.addEventListener('load', function(){
+            let ipa1 = document.getElementById('ipa1')
+            let ipa2 = document.getElementById('ipa2')
+            let ipa3 = document.getElementById('ipa3')
+            let ipa4 = document.getElementById('ipa4')
+            let ipb1 = document.getElementById('ipb1')
+            let ipb2 = document.getElementById('ipb2')
+            let ipb3 = document.getElementById('ipb3')
+            let ipb4 = document.getElementById('ipb4')
+
+            let m8 = document.getElementById('m8')
+            let m16 = document.getElementById('m16')
+            let m24 = document.getElementById('m24')
+
+            let boton = document.getElementById('boton')
+
+            let analisi = document.getElementById('analisis')
+
+                boton.addEventListener('click', function(){
+                   if(m8.checked){
+                        if (ipa1.value == ipb1.value) {
+                            analisis.innerHTML = "Estan en la misma red"
+                        }
+                        else {
+                            let texto = document.createElement('h3')
+                            analisis.innerHTML = "No Estan en la misma red"
+                        }
+                    }
+                    else if(m16.checked){
+                        if (ipa1.value == ipb1.value && ipa2.value == ipb2.value) {
+                            analisis.innerHTML = "Estan en la misma red"
+                        }
+                        else {
+                            analisis.innerHTML = "No Estan en la misma red"
+                        }
+                    }
+                    else if(m24.checked){
+                        if (ipa1.value == ipb1.value && ipa2.value == ipb2.value && ipa3.value == ipb3.value) {
+                            analisis.innerHTML = "Estan en la misma red"
+                        }
+                        else {
+                            analisis.innerHTML = "No Estan en la misma red"
+                        }
+                    }
+                    
+
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Analisis de IP`s</h1>
+        IP A <input type="text" id="ipa1" size="3" max="3">.<input type="text" id="ipa2" size="3" max="3">.<input type="text" id="ipa3" size="3" max="3">.<input type="text" id="ipa4" size="3" max="3">
+    </br>
+    </br>
+        IP B <input type="text" id="ipb1" size="3" max="3">.<input type="text" id="ipb2" size="3" max="3">.<input type="text" id="ipb3" size="3" max="3">.<input type="text" id="ipb4" size="3" max="3">
+    </br>
+    </br>
+    MASCARA: 
+    </br>
+    8<input type="radio" id="m8" name="mascara">
+    16<input type="radio" id="m16" name="mascara">
+    24<input type="radio" id="m24" name="mascara">
+    </br>
+    </br>
+        <input type="button" id="boton" value="analizar">
+    </br>
+    </br>
+        <h3 id="analisis"></h3>
+    </body>
+</html>
